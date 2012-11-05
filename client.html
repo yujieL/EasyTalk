@@ -1,0 +1,96 @@
+<html>
+<head>
+<title>Demo</title>
+<script type="text/javascript" src="json.js"></script>
+<script type="text/javascript">
+	var input = window.prompt("Welcome to use EasyTalk\nFomat:Name,Roomid","lanxue,html");
+	if(input){
+		var STATUS = new Array('connect','chat','close');
+		var i = input.split(',');
+		var name = i[0];
+		var rid = i[1];
+		if(name == ''){
+			name = '匿名';
+		}
+		if(rid == ''){
+			rid = 'public';
+		}	
+		var wsocket;
+		function Header(status,content){
+			//var header = {"'status':'"+status+"','rid':'"+rid+"','content':'"+content+"'"};
+			var header = {'status':status,'rid':rid,'content':content};
+			return header.toJSONString();
+		}
+		function wsInitialization() {  
+			var ws = new WebSocket( "ws://localhost:9000");  
+			ws.onopen = function() {  
+				ws.send(Header(STATUS[0],setContent('')));  
+			};  
+
+			ws.onmessage = function(event) {  
+				n = document.createTextNode(event.data);
+				e = document.createElement("li");
+				e.appendChild(n)
+				document.getElementById('res').appendChild(e);
+				//document.getElementById('res').innerHTML = event.data
+			};  
+
+			ws.onclose = function() {  
+				ws.send(Header(STATUS[2],setContent('')));
+			};  
+			return ws
+		}
+		function setContent(c){
+			var now = new Date();
+			var time = now.getHours()+":"+now.getMinutes()+":"+now.getSeconds()
+			return name +"\t" + time+"\n"+c
+		}
+		function setValue(){
+			document.getElementById('p').innerHTML = Header(STATUS[2],setContent('haha'))
+		}
+		function send(){
+			var content = document.getElementById('input').value
+			wsocket.send(Header(STATUS[1],setContent(content)))
+		}
+		window.onload = function(){;
+			wsocket = wsInitialization();
+		}
+	}
+</script>
+
+<head>
+<body>
+	<!-- <div class="sample_popup"     id="popup" style="visibility: hidden; display: none;">
+	<div class="menu_form_header" id="popup_drag">
+	<img class="menu_form_exit"   id="popup_exit" src="bg.png" />
+	   <center>Login</center>
+	</div>
+	<div class="menu_form_body">
+	<form method="post" action="http://www.websbook.com">
+	<table>
+	<tr>
+	  <th>Username:</th>
+	  <td><input class="field" type="text" onfocus="select();" /></td>
+	</tr>
+	<tr>
+	  <th>Password:</th>
+	  <td><input class="field" type="password" onfocus="select();" /></td>
+	</tr>
+	<tr>
+	  <th> </th>
+	  <td><input class="btn" type="submit" value="Submit" /></td>
+	</tr>
+	</table>
+	</form>
+	</div>
+	</div>
+	</div> -->
+	<input type='text' id='input'>
+	<input type='button' onClick='send()' value='Send'>
+	<div >
+		<ul id='res'style='background-color: #ab22a1;height: 300px;width:600px;overflow-Y: scroll'>
+	</div>
+	<p id='p'></p>
+	<input type='button' value='submit' onClick="setValue()">
+</body>
+</html>
