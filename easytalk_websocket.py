@@ -34,9 +34,10 @@ class EchoServerProtocol(WebSocketServerProtocol):
         for user in room:
             m = AdminMsg + self.msg[Header[2]] + STATUS[2]
             user.sendMessage(m)
+        rid = self.rid
         room.remove(self)
         if len(room) == 0:
-            room.pop(self.rid)
+            room.pop(rid)
 class EchoServerFactory(WebSocketServerFactory):
     protocol = EchoServerProtocol
     
