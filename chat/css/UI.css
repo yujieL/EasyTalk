@@ -1,0 +1,131 @@
+
+#header-container{
+	background-color:#FF8C40;
+	margin-bottom:10px;
+	height: 17%;
+	width: 100%;
+	background-repeat: repeat;
+	background-position: center top;
+	background-image: url(../images/header-bg.png);
+}
+
+#enter {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 16px;
+	font-style: normal;
+	font-weight: normal;
+	color: #CCCCCC;
+	float: left;
+	height: 20%;
+	width: 100%;
+	padding-bottom: 40px;
+}
+
+
+h2{
+	font-size: 40px;
+	color: #FFFFFF;
+	text-align:center;
+}
+
+
+.btn, input[type="submit"], button {
+    background: none repeat scroll 0 0%, -moz-linear-gradient(#CCCCCC, #B3B3B3) repeat scroll 0 0 transparent;
+    border: 1px solid rgba(45, 45, 45, 0.5);
+    border-radius: 5px 5px 5px 5px;
+    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.4), 0 1px 0 rgba(255, 255, 255, 0.4) inset;
+    color: #444444;
+    display: inline-block;
+    font-weight: 300;
+    line-height: 20px;
+    margin: 50px 0;
+    padding: 9px 15px 7px;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.4);
+}
+.btn:hover, input[type="submit"]:hover, button:hover {
+    background: none repeat scroll 0 0%, -moz-linear-gradient(#B3B3B3, #CCCCCC) repeat scroll 0 0 transparent;
+    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.4), 0 2px 1px rgba(32, 32, 32, 0.2) inset;
+    color: #444444;
+    text-decoration: none;
+}
+
+#dl{
+	margin-left: 15px;
+}
+
+.speaker{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 20px;
+	font-style: normal;
+	font-weight: normal;
+	color: #00F;
+	overflow-y:auto;
+}
+.words{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 20px;
+	font-style: normal;
+	font-weight: normal;
+	color: Black;
+	overflow-y:auto;
+	word-wrap: break-word;
+	word-break:break-all;
+}
+
+ #content{
+ 	margin-left: 60px;
+ 	width: 75%;
+ 	height: 80%;
+	border:0px solid #9C9898;
+ 	display: inline;
+ 	background-color: white;
+ 	float: left;
+ }
+ #display{
+ 	border:1px solid #9C9898;
+ 	width: 100%;
+ 	height: 80%;
+ 	overflow-y:auto;
+	background-repeat: no-repeat;
+	background-position: center top;
+	background-image: url(../images/talk_bg.jpg);
+ }
+ #input{
+ 	margin-top: 3px;
+ 	border:1px solid #9C9898;
+ 	width: 100%;
+ 	height: 20%;
+	background-repeat: repeat;
+	background-position: center top;
+	background-image: url(../images/header-bg.png);
+ }
+ #users{
+ 	height:80%;
+ 	width: 15%;
+ 	border:1px solid #9C9898;
+ 	float: left;
+ 	overflow: auto;
+ 	text-align: center;
+	background-repeat: repeat;
+	background-position: center top;
+	background-image: url(../images/paper.png);
+ }
+ #sendbtn{
+ 	float: left;
+ 	margin-top: 9%;
+ }
+ #txtarea{
+ 	margin:10px;
+ 	height:70%;
+ 	width: 80%;
+ 	border: 0px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 25px;
+	font-style: normal;
+	font-weight: normal;
+	color: Black;
+	float:left;
+ }
+ li{
+	font-size: 20px;
+}
